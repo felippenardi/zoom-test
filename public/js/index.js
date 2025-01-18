@@ -360,6 +360,13 @@ function setTopic(idx, text) {
 app.sdk.onConnect(async () => {
     if (app.isInClient) return;
 
+    await app.sdk.getMeetingParticipantsEmail();
+
+    app.sdk.onParticipantEmail(async ({ payload }) => {
+        document.body.style.backgroundColor = 'red';
+        alert(JSON.stringify(payload));
+    });
+
     await app.sdk.postMessage({
         participants: app.participants,
         color: settings.color,
