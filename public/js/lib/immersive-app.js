@@ -117,6 +117,10 @@ class ImmersiveApp {
                 'postMessage',
                 'runRenderingContext',
                 'sendAppInvitationToAllParticipants',
+                'takeParticipantPhoto',
+                'onPhoto',
+                'getMeetingParticipantsEmail',
+                'onParticipantEmail',
             ],
         });
         console.debug('Configuration', conf);

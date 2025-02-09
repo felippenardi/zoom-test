@@ -362,9 +362,8 @@ app.sdk.onConnect(async () => {
 
     await app.sdk.getMeetingParticipantsEmail();
 
-    app.sdk.onParticipantEmail(async ({ payload }) => {
-        document.body.style.backgroundColor = 'red';
-        alert(JSON.stringify(payload));
+    app.sdk.onParticipantEmail(async (payload) => {
+        console.log(JSON.stringify(payload));
     });
 
     await app.sdk.postMessage({
