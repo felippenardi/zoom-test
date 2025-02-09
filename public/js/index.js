@@ -360,9 +360,13 @@ function setTopic(idx, text) {
 app.sdk.onConnect(async () => {
     if (app.isInClient) return;
 
-    await app.sdk.getMeetingParticipantsEmail();
+    //await app.sdk.getMeetingParticipantsEmail();
+    //app.sdk.onParticipantEmail(async (payload) => {
+    //    console.log(JSON.stringify(payload));
+    //});
 
-    app.sdk.onParticipantEmail(async (payload) => {
+    await app.sdk.takeParticipantPhoto();
+    app.sdk.onPhoto(async (payload) => {
         console.log(JSON.stringify(payload));
     });
 
